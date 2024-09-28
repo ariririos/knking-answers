@@ -1,5 +1,11 @@
 #include <stdio.h>
 
 int main() {
-    printf("%f", 1.0 / 0);
+    for (int i = 0; i < 10; i++) {
+        printf("%d", i);
+    }
+    
+    printf("%d", i);
+
+    return 0;
 }
