@@ -1,11 +1,9 @@
 #include <stdio.h>
 
 int main() {
-    for (int i = 0; i < 10; i++) {
-        printf("%d", i);
-    }
-    
-    printf("%d", i);
+    int i[10] = {0,};
+
+    printf("%d %d", i, &i);
 
     return 0;
 }
