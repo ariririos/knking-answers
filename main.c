@@ -1,9 +1,11 @@
 #include <stdio.h>
 
 int main() {
-    int i[10] = {0,};
+    int *i;
 
-    printf("%d %d", i, &i);
+    // *i = 1;
+
+    printf("%d %d", i, *i);
 
     return 0;
 }
