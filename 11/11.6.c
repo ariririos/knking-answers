@@ -1,22 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int compare(const void *a, const void *b) {
-    return (*(int*)a > *(int*)b) - (*(int*)a < *(int*)b);
+int compare(const void *a, const void *b);
+void find_two_largest(int a[], int n, int *largest, int *second_largest);
+
+int main(void) {
+    int N = 10;
+    int a[N] = {};
+
+    printf("Enter %d integers: ", N);
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &a[i]);
+    }
+    int largest, second_largest;
+    find_two_largest(a, N, &largest, &second_largest);
+
+    printf("largest: %d\nsecond largest: %d\n", largest, second_largest);
 }
 
 void find_two_largest(int a[], int n, int *largest, int *second_largest) {
     qsort(a, n, sizeof(int), compare);
-    *largest = a[n];
-    *second_largest = a[n-1]
+    *largest = a[n-1];
+    *second_largest = a[n-2];
 
 }
 
-int main(void) {
-    int a[11] = {10,1,2,3,4,5,6,7,8,9,0};
-
-    int largest, second_largest;
-    find_two_largest(a, 11, &largest, &second_largest);
-
-    printf("%d %d", largest, second_largest);
+int compare(const void *a, const void *b) {
+    return (*(int*)a > *(int*)b) - (*(int*)a < *(int*)b);
 }
